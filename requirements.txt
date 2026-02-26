@@ -1,0 +1,33 @@
+# =============================================================================
+# social-media-metrics-pipeline — Python dependencies
+# Python >= 3.10 required (uses `list[Path]`, `dict[str, Any]` type hints)
+# =============================================================================
+
+# --- Core pipeline dependencies ---
+sqlalchemy>=2.0,<3.0          # DB connectivity (Postgres + SQLite)
+pandas>=2.0,<3.0              # Data transformation (silver layer)
+
+# --- PDF extraction ---
+pdfplumber>=0.10,<1.0         # Table-aware PDF parsing (primary)
+# pymupdf>=1.23,<2.0          # Uncomment as alternative: faster, better for scanned PDFs
+
+# --- Database drivers ---
+psycopg2-binary>=2.9,<3.0     # Postgres driver (binary wheel; use psycopg2 in production)
+
+# --- Notebook support ---
+jupyter>=1.0,<2.0
+jupyterlab>=4.0,<5.0
+ipykernel>=6.0
+
+# =============================================================================
+# requirements-dev.txt (install additionally for development)
+# pip install -r requirements.txt -r requirements-dev.txt
+# =============================================================================
+# pytest>=8.0,<9.0
+# pytest-cov>=5.0
+# black>=24.0
+# isort>=5.0
+# pre-commit>=3.0
+# python-dotenv>=1.0           # Load .env files during local development
+# great-expectations>=0.18     # Data quality (future)
+# apache-airflow>=2.9          # Orchestration (future — heavy dep, install separately)
